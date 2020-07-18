@@ -17,8 +17,8 @@ Synchronous parallelism: if the number of cores is insufficient (Spark), the par
 Communication cost in Spark scale with the number of nodes, not the number of partitions
 
 ### The communication cost:  
-paper: tau_min * f(K)  
-spark: tau_min * f(node)  
+paper: tau_min * f(k). k is the number of machines, which is analogous to the number of partitions in Spark.  
+spark: tau_min * f(#node). Each node may save multiple partitions. So the actual communication cost may be better than the setting considered in the paper because #node < k (#partition)
 
 ### The processing cost can be decomposed to two parts:
 Accessing partition - yarn: intra-node; local: inter-node (more costly)  
