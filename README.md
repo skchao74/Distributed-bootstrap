@@ -23,3 +23,6 @@ spark: tau_min * f(#node). Each node may save multiple partitions. So the actual
 ### The processing cost can be decomposed to two parts:
 Accessing partition - yarn: intra-node; local: inter-node (more costly)  
 Communication - yarn: inter-node(?); local: ??? we are not sure whether the result is saved in the central place where the data are saved, or on the node where the core is
+
+### References
+https://github.com/feng-li/dlsa  
