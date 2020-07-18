@@ -1,0 +1,13 @@
+#!/bin/sh -l
+
+module load anaconda
+
+module load use.own
+module load conda-env/mypackages-py3.7.0
+module load anaconda/5.3.1-py37
+module load spark/2.4.4
+export ARROW_PRE_0_15_IPC_FORMAT=1
+
+cd $SLURM_SUBMIT_DIR
+
+spark-submit --master local[*] real_spark.py
