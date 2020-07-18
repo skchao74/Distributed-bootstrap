@@ -2,7 +2,7 @@
     PYSPARK_PYTHON=python3 ARROW_PRE_0_15_IPC_FORMAT=1 spark-submit \
                   --master yarn  \
                   
-Yarn: HDFS distributes file system\\
+Yarn: HDFS distributes file system 
 Local: no distributed system
 
 The gap with the current paper setting:
