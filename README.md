@@ -21,7 +21,7 @@ paper: tau_min * f(k). k is the number of machines, which is analogous to the nu
 spark: tau_min * f(#node). Each node may save multiple partitions. So the actual communication cost may be better than the setting considered in the paper because #node < k (#partition)
 
 ### The processing cost can be decomposed to two parts:
-Accessing partition - yarn: inter-node (more costly); local: intra-node
+Accessing partition - yarn: inter-node (more costly); local: intra-node 
 Communication - yarn: inter-node(?); local: ??? we are not sure whether the result is saved in the central place where the data are saved, or on the node where the core is
 
 ### References
