@@ -9,8 +9,8 @@ yarn: HDFS distributes file system
 local: no distributed system
 
 0) .sh file to request nodes in Slurp
-1) Initiating spark. yarn: use HDFS to store data on nodes; local: save data on only one node;  
-2) Spark.py: repartition data to desirable partition size. The partitions will be processed with the cores in the node, and one writes the operations that each core does to each partition.
+1) Initiating spark. yarn: use HDFS to store data as blocks on nodes; local: save data on only one node;  
+2) Spark.py: first partition data (one partition in each block for HDFS) and then repartition data (multiple partitions in each block) to desirable partition size. The partitions will be processed with the cores in the node, and one writes the operations that each core does to each partition.
 
 ### The gap between Spark and the master-worker setting in the paper:  
 Synchronous parallelism: if the number of cores is insufficient (Spark), the parallelism becomes asynchronous  
