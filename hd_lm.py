@@ -1,7 +1,8 @@
 """
 Simulation studies of distributed bootstrap algorithms for simultaneous CIs in high-dimensional linear regression model.
 We test two methods: k-grad and n+k-1-grad.
-
+The entire run is for Toeplitz design matrix and one replication.
+For other design matrices and more replications, find the associated comments below.
 """
 
 import numpy as np
