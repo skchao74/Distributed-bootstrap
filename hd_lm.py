@@ -153,23 +153,27 @@ seed(l)
 cov_mat = toeplitz(0.9 ** np.arange(d))
 # For equi-corr design, use the following line instead.
 # cov_mat = np.full((d, d), 0.8); np.fill_diagonal(cov_mat, 1)
+# Covariates.
 X = np.random.multivariate_normal(np.zeros(d), cov_mat, N)
 
+# Compute nodewise Lasso for each number of machines.
 inv_cov = [ndws(X[:int(N / k), :]) for k in ks]
 
 # Run k-grad/n+k-1-grad to compute CIs.
 for i in np.arange(len(ss)):
+    # Number of non-zero true coefficients.
     s = ss[i]
+    # True coefficients.
     beta_s = np.concatenate((np.ones(s), np.zeros(d - s)))
     mu = X.dot(beta_s)
+    # Responses.
     y = np.random.normal(mu, 1)
     for j in np.arange(len(ks)):
         print([l, i, j])
+        # Number of machines.
         k = ks[j]
-        try:
-            cov[:, :, i, j], rad[:, :, i, j] = ci(y, X, inv_cov[j], k, B, beta_s, t)
-        except:
-            continue
+        # Run bootstrap algorithms.
+        cov[:, :, i, j], rad[:, :, i, j] = ci(y, X, inv_cov[j], k, B, beta_s, t)
 
 # Print CI results.
 for i1 in np.arange(2):
