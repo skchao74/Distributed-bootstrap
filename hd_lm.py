@@ -1,5 +1,7 @@
 """
-Simulation studies of k-grad and n+k-1-grad distributed bootstrap algorithms for simultaneous CIs in high-dimensional linear regression model.
+Simulation studies of distributed bootstrap algorithms for simultaneous CIs in high-dimensional linear regression model.
+We test two methods: k-grad and n+k-1-grad.
+
 """
 
 import numpy as np
@@ -142,7 +144,7 @@ t = 4
 cov = np.full([2, t, len(ss), len(ks)], np.nan)
 rad = np.full([2, t, len(ss), len(ks)], np.nan)
 
-# Set random seed for each replication.
+# Set random seed for each replication. Change the value of l at each independent replication.
 l = 1
 seed(l)
 
