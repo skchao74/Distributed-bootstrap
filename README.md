@@ -1,5 +1,7 @@
 ### Reproduce the code
 
+We take linear model with Toeplitz design (in lm_tp folder) as an example. Linear model with equi-correlation design, GLM with Toeplitz design, and GLM with equi-correlation design are similar.
+
 1) cv_hd_lm_tp.py contains the base program for running one replication of bootstrap CI algorithms. cv_hd_lm_tp.sub contains the scripts for loading the required module and running the .py file.
 2) run_lm_tp.sh generates .py and .sub files for 1000 replications of bootstrap CI algorithms and submits the jobs to computing clusters.
 3) postprocess_lm_tp.sh combines the output .csv files across 1000 replications.
