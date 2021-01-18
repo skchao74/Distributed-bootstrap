@@ -11,7 +11,6 @@ class ScalarFormatterForceFormat(ScalarFormatter):
 
 
 def gen_plt_hd_rel(cov, rad, ks, km, dis, des, dim='', supp='a'):
-    d_str = [r'$d=2^3$', r'$d=2^5$', r'$d=2^7$']
     if dim == 'hd':
         d_str = [r'$s_0=2^2$', r'$s_0=2^4$']
     if dim == 'hd' and dis == 'glm':

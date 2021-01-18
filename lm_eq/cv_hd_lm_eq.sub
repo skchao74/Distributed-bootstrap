@@ -2,4 +2,4 @@
 
 module load anaconda/5.3.1-py37
 
-python hd_lm_eq.py
+python cv_hd_lm_eq.py
