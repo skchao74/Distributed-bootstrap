@@ -1,0 +1,5 @@
+#!/bin/sh -l
+
+module load anaconda/5.3.1-py37
+
+python hd_lm_eq_truerad_supp.py
