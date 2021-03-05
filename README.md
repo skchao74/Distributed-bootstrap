@@ -1,4 +1,6 @@
-### Reproduce the code
+### Reproducing the results
+
+## Synthetic studies
 
 Here, we take linear model with Toeplitz design (in lm_tp folder) as an example. Linear model with equi-correlation design (in lm_eq folder), GLM with Toeplitz design (in glm_tp folder), and GLM with equi-correlation design (in glm_eq folder) are similar to this.
 
@@ -9,3 +11,5 @@ Here, we take linear model with Toeplitz design (in lm_tp folder) as an example.
 5) run_lm_tp.sh generates .py and .sub files for 500 replications for simulating oracle widths and submits the jobs to computing clusters. The results will be saved in .csv files.
 6) postprocess_lm_tp_truerad.sh combines the output .csv files across 500 replications.
 7) plots_lm_tp.py aggregates the results to compute empirical coverage probabilities, average widths, and oracle widths, and generates the plots.
+
+## Semi-synthetic studies
